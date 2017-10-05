@@ -48,8 +48,8 @@ function createShip(shipLength) {
 
   // Also if i reduce the position by the shipLength now, have have not to do extra bound checks
   // x = column, y = row
-  var posx = Math.round(Math.random() * (MAXCOLUMNS - (DIRECTION ? shipLength : 1)));
-  var posy = Math.round(Math.random() * (MAXROWS - (!DIRECTION ? shipLength : 1)));
+  var posx = Math.round(Math.random() * (MAXCOLUMNS - 1 - (DIRECTION ? shipLength : 0)));
+  var posy = Math.round(Math.random() * (MAXROWS - 1 - (!DIRECTION ? shipLength : 0)));
 
   if(DIRECTION) {
     // checking Border on vertical direction/column of ShipLength
