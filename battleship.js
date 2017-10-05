@@ -82,6 +82,7 @@ function createShip(shipLength) {
 }
 
 // checks Border   if a ship class is on border --> true
+// I do not check ship Position, because a ship legth is not smaller than 2 
 function checkBorder(posx, posy) {
   return ((posx + 1 <= 9 && $(`td[data-r="${posy}"][data-c="${posx + 1}"]`).hasClass('ship')) ||
           (posx - 1 >= 0 && $(`td[data-r="${posy}"][data-c="${posx - 1}"]`).hasClass('ship')) ||
