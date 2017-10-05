@@ -1,8 +1,8 @@
 const MAXCOLUMNS = 10;
 const MAXROWS = 10;
 
-const SHIPTYPES =   [2,    3,        4,    5];
-const SHIPSPAWNS =  [1,    1 + 1,    1,    1];
+const SHIPTYPES =   [2,    3,        4,    5]; // what length the ship has
+const SHIPSPAWNS =  [1,    1 + 1,    1,    1]; // how ofte a ship with a length has to spawn
 
 $(() => {
   // Select table containing the battleground
