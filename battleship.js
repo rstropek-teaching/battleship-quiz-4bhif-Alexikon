@@ -44,16 +44,14 @@ $(() => {
 });
 
 function createShip(shipLength) {
-  let DIRECTION = Math.round(Math.random());
+  const DIRECTION = Math.round(Math.random()) == 1;
 
-  // Using Truthy ans Falsy Integer with !! & !!!
   // Also if i reduce the position by the shipLength now, have have not to do extra bound checks
   // x = column, y = row
-  var posx = Math.round(Math.random() * (10 - ( !!DIRECTION ? shipLength : 0)));
-  var posy = Math.round(Math.random() * (10 - (!!!DIRECTION ? shipLength : 0)));
+  var posx = Math.round(Math.random() * (MAXCOLUMNS - (DIRECTION ? shipLength : 1)));
+  var posy = Math.round(Math.random() * (MAXROWS - (!DIRECTION ? shipLength : 1)));
 
-  // Using Truthy Integer
-  if(!!DIRECTION) {
+  if(DIRECTION) {
     // checking Border on vertical direction/column of ShipLength
     for(let x = posx; x < posx + shipLength; x++) {
       if(checkBorder(x, posy)) {
